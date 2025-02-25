@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, TargetAndTransition, VariantLabels } from "framer-motion";
+import { motion, TargetAndTransition, VariantLabels } from "motion/react";
 
 interface AnimatedDivProps {
   children: React.ReactNode;
