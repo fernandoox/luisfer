@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Portfolio",
-  description: "A showcase of your work and skills",
+  title: "Luis F Fernandez – Software Engineer",
+  description: "A showcase of your work and skills like a front-end developer.",
 };
 
 export default function RootLayout({
