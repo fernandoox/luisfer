@@ -27,7 +27,7 @@ const HomePage: React.FC = () => {
           I have previously worked at <strong>Cornershop</strong> and later at{" "}
           <strong>Uber</strong>, and I also have experience collaborating with
           companies in diverse sectors such as banking/fintech, insurance,
-          startups, retail and remittances.
+          startups, retail, e-commerce and remittances.
         </p>
         <p className="mb-4">
           At <strong>Badak</strong>, as an engineering lead, I designed and
