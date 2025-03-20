@@ -29,10 +29,10 @@ const techStack = {
     { name: "vitest", label: "Vitest" },
   ],
   tools: [
+    { name: "storybook", label: "Storybook" },
     { name: "git", label: "Git" },
     { name: "github", label: "GitHub" },
     { name: "docker", label: "Docker" },
-    { name: "storybook", label: "Storybook" },
   ],
   backend: [
     { name: "nodejs", label: "Node.js" },
@@ -46,7 +46,6 @@ const techStack = {
   ],
 };
 
-// Category labels in English
 const categoryLabels = {
   frontend: "Frontend",
   stateManagement: "State Management",
@@ -59,10 +58,8 @@ const categoryLabels = {
 const MyStack: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
-  // Preserve the order of categories
   const allCategories = Object.keys(techStack);
 
-  // Function to get all tech items for "All" view
   const getAllTechItems = () => {
     const allItems: { name: string; label: string }[] = [];
     allCategories.forEach((category) => {
@@ -75,7 +72,6 @@ const MyStack: React.FC = () => {
     <div className="w-full max-w-6xl mx-auto px-4 py-10">
       <h2 className="text-3xl font-bold text-center mb-12">My Tech Stack</h2>
 
-      {/* Category filters */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
         <button
           onClick={() => setActiveCategory(null)}
@@ -104,9 +100,7 @@ const MyStack: React.FC = () => {
         ))}
       </div>
 
-      {/* Tech grid - different view for All vs. specific category */}
       {activeCategory === null ? (
-        // All technologies in a continuous grid without category headers
         <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {getAllTechItems().map((tech) => (
             <motion.div
@@ -126,7 +120,6 @@ const MyStack: React.FC = () => {
           ))}
         </div>
       ) : (
-        // Single category view with header
         <div>
           <h3 className="text-xl font-semibold mb-4 mt-2">
             {categoryLabels[activeCategory as keyof typeof categoryLabels]}
