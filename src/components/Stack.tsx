@@ -13,6 +13,7 @@ const techStack = {
     { name: "angular17", label: "Angular" },
     { name: "reactjs", label: "React" },
     { name: "nextjs2", label: "Next.js" },
+    { name: "astro", label: "Astro" },
     { name: "html5", label: "HTML5" },
     { name: "css3", label: "CSS3" },
     { name: "sass", label: "Sass" },
@@ -72,7 +73,7 @@ const MyStack: React.FC = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-10">
-      <h2 className="text-3xl font-bold text-center mb-12">My Stack</h2>
+      <h2 className="text-3xl font-bold text-center mb-12">My Tech Stack</h2>
 
       {/* Category filters */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
@@ -106,19 +107,19 @@ const MyStack: React.FC = () => {
       {/* Tech grid - different view for All vs. specific category */}
       {activeCategory === null ? (
         // All technologies in a continuous grid without category headers
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {getAllTechItems().map((tech) => (
             <motion.div
               key={tech.name}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
-              className="flex flex-col items-center justify-center p-4 rounded-lg bg-card hover:bg-card/80 transition-colors"
+              className="flex flex-col items-center justify-center p-3 rounded-lg bg-card hover:bg-card/80 transition-colors"
             >
-              <div className="w-12 h-12 flex items-center justify-center">
+              <div className="w-10 h-10 flex items-center justify-center">
                 <StackIcon name={tech.name} />
               </div>
-              <span className="mt-2 text-sm font-medium text-center">
+              <span className="mt-2 text-xs font-medium text-center">
                 {tech.label}
               </span>
             </motion.div>
@@ -126,31 +127,27 @@ const MyStack: React.FC = () => {
         </div>
       ) : (
         // Single category view with header
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          <div className="col-span-full">
-            <h3 className="text-xl font-semibold mb-4 mt-2">
-              {categoryLabels[activeCategory as keyof typeof categoryLabels]}
-            </h3>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-              {techStack[activeCategory as keyof typeof techStack].map(
-                (tech) => (
-                  <motion.div
-                    key={tech.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex flex-col items-center justify-center p-4 rounded-lg bg-card hover:bg-card/80 transition-colors"
-                  >
-                    <div className="w-12 h-12 flex items-center justify-center">
-                      <StackIcon name={tech.name} />
-                    </div>
-                    <span className="mt-2 text-sm font-medium text-center">
-                      {tech.label}
-                    </span>
-                  </motion.div>
-                )
-              )}
-            </div>
+        <div>
+          <h3 className="text-xl font-semibold mb-4 mt-2">
+            {categoryLabels[activeCategory as keyof typeof categoryLabels]}
+          </h3>
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {techStack[activeCategory as keyof typeof techStack].map((tech) => (
+              <motion.div
+                key={tech.name}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="flex flex-col items-center justify-center p-3 rounded-lg bg-card hover:bg-card/80 transition-colors"
+              >
+                <div className="w-10 h-10 flex items-center justify-center">
+                  <StackIcon name={tech.name} />
+                </div>
+                <span className="mt-2 text-xs font-medium text-center">
+                  {tech.label}
+                </span>
+              </motion.div>
+            ))}
           </div>
         </div>
       )}
