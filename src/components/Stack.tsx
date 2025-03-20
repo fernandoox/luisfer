@@ -72,7 +72,7 @@ const MyStack: React.FC = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-10">
-      <h2 className="text-3xl font-bold text-center mb-12">My Tech Stack</h2>
+      <h2 className="text-3xl font-bold text-center mb-12">My Stack</h2>
 
       {/* Category filters */}
       <div className="flex flex-wrap justify-center gap-3 mb-10">
