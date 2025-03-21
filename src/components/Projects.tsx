@@ -180,8 +180,8 @@ const Projects: React.FC = () => {
         <div>
           <h2 className="text-3xl font-bold mb-3">My Projects</h2>
           <p className="text-muted-foreground max-w-2xl">
-            A collection of applications and websites I've built, showcasing my
-            skills and experience in web development.
+            A collection of applications and websites I&apos;ve built,
+            showcasing my skills and experience in web development.
           </p>
         </div>
 
