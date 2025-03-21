@@ -5,6 +5,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import MyStack from "@/components/Stack";
+import Projects from "@/components/Projects";
 
 const HomePage: React.FC = () => {
   const router = useRouter();
@@ -36,7 +37,8 @@ const HomePage: React.FC = () => {
           smoothly and effectively.
         </p>
       </div>
-      <div className="w-full md:w-4/6 mx-auto p-6">
+      <div className="w-full md:w-5/6 mx-auto p-6">
+        <Projects />
         <MyStack />
         {/* Botón de navegación a la página de proyectos */}
         <AnimatedDiv

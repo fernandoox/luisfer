@@ -7,6 +7,9 @@ const withMDX = createMDX({
 
 const nextConfig: NextConfig = withMDX({
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  images: {
+    domains: ["picsum.photos", "images.unsplash.com"],
+  },
 });
 
 export default nextConfig;
