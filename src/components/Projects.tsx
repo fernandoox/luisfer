@@ -175,7 +175,7 @@ const Projects: React.FC = () => {
       : projects.filter((project) => project.featured);
 
   return (
-    <section className="w-full max-w-8xl py-16">
+    <section className="w-full max-w-8xl py-4">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
         <div>
           <h2 className="text-3xl font-bold mb-3">My Projects</h2>
