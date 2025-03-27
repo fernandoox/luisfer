@@ -40,7 +40,7 @@ export function Navbar() {
     <nav
       className={`${
         scrolled
-          ? "bg-background/80 backdrop-blur-sm shadow-sm"
+          ? "bg-background/95 backdrop-blur-[1px] border-b border-border/50 shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
           : "bg-background"
       } fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
     >
