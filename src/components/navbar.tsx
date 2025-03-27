@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const navItems = [
@@ -75,10 +74,9 @@ export function Navbar() {
             </div>
           </div>
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent hover:text-accent-foreground focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            {/* Reemplazamos el componente Button por un div personalizado */}
+            <div
+              className="p-2 rounded-md hover:bg-accent cursor-pointer"
               onClick={() => setIsOpen(!isOpen)}
             >
               <span className="sr-only">Open main menu</span>
@@ -91,7 +89,7 @@ export function Navbar() {
                     exit={{ rotate: 90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <X className="block h-6 w-6" aria-hidden="true" />
+                    <X size={24} strokeWidth={1.5} aria-hidden="true" />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -101,11 +99,11 @@ export function Navbar() {
                     exit={{ rotate: -90, opacity: 0 }}
                     transition={{ duration: 0.2 }}
                   >
-                    <Menu className="block h-6 w-6" aria-hidden="true" />
+                    <Menu size={24} strokeWidth={1.5} aria-hidden="true" />
                   </motion.div>
                 )}
               </AnimatePresence>
-            </Button>
+            </div>
           </div>
         </div>
       </div>
