@@ -17,7 +17,6 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
 
-  // Detectar scroll para cambiar estilo de navbar
   React.useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -74,9 +73,9 @@ export function Navbar() {
             </div>
           </div>
           <div className="md:hidden">
-            {/* Reemplazamos el componente Button por un div personalizado */}
+            {/* Reemplazamos el componente Button por un div peronalizado */}
             <div
-              className="p-2 rounded-md hover:bg-accent cursor-pointer"
+              className="p-2 rounded-md bg-accent cursor-pointer"
               onClick={() => setIsOpen(!isOpen)}
             >
               <span className="sr-only">Open main menu</span>
