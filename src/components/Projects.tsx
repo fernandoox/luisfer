@@ -4,43 +4,36 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Github, ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Define project type
 type Project = {
   id: string;
   title: string;
   description: string;
-  image: string;
+  image?: string;
+  video?: string;
   tags: string[];
-  githubUrl?: string;
-  liveUrl?: string;
   featured: boolean;
 };
 
-// Sample projects data - replace with your actual projects
 const projects: Project[] = [
   {
     id: "project-1",
-    title: "E-commerce Dashboard",
+    title: "Home Insurance Quotation Tool",
     description:
-      "A responsive admin dashboard for managing online store products, orders, and customer data with real-time analytics.",
-    image: "https://picsum.photos/806/506",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
-    githubUrl: "https://github.com/yourusername/ecommerce-dashboard",
-    liveUrl: "https://ecommerce-dashboard-demo.vercel.app",
+      "A web app to quickly quote home insurance with coverage for damages, incidents, and assistance services.",
+    image: "/projects/gnp.webp",
+    tags: ["Angular", "TypeScript", "Angular Material", "Node.js"],
     featured: true,
   },
   {
     id: "project-2",
-    title: "Task Management App",
+    title: "Kapital Flex",
     description:
-      "A collaborative task management application with drag-and-drop functionality, real-time updates, and team collaboration features.",
-    image: "https://picsum.photos/805/505",
-    tags: ["Vue.js", "TypeScript", "Pinia", "Firebase"],
-    githubUrl: "https://github.com/yourusername/task-management",
-    liveUrl: "https://task-app-demo.netlify.app",
+      "A fintech solution offering flexible credit lines to finance supplier payments and improve cash flow management.",
+    video: "/projects/k-flex.mp4",
+    tags: ["React", "JavaScript", "Redux Toolkit", "MongoDB"],
     featured: true,
   },
   {
@@ -50,8 +43,6 @@ const projects: Project[] = [
       "A mobile-responsive application for tracking workouts, nutrition, and progress with data visualization and personalized insights.",
     image: "https://picsum.photos/804/504",
     tags: ["React", "Node.js", "MongoDB", "Chart.js"],
-    githubUrl: "https://github.com/yourusername/fitness-tracker",
-    liveUrl: "https://fitness-tracker-demo.vercel.app",
     featured: false,
   },
   {
@@ -61,8 +52,6 @@ const projects: Project[] = [
       "A weather forecast application with location detection, extended forecasts, and interactive weather maps.",
     image: "https://picsum.photos/803/503",
     tags: ["JavaScript", "HTML5", "CSS3", "API Integration"],
-    githubUrl: "https://github.com/yourusername/weather-app",
-    liveUrl: "https://weather-app-demo.netlify.app",
     featured: false,
   },
   {
@@ -72,8 +61,6 @@ const projects: Project[] = [
       "A full-featured blog platform with markdown support, comment system, and user authentication.",
     image: "https://picsum.photos/802/502",
     tags: ["Angular", "TypeScript", "Node.js", "PostgreSQL"],
-    githubUrl: "https://github.com/yourusername/blog-platform",
-    liveUrl: "https://blog-platform-demo.vercel.app",
     featured: true,
   },
   {
@@ -83,13 +70,10 @@ const projects: Project[] = [
       "A recipe search application with filtering by ingredients, dietary restrictions, and meal type.",
     image: "https://picsum.photos/801/501",
     tags: ["React", "Redux", "CSS3", "API Integration"],
-    githubUrl: "https://github.com/yourusername/recipe-finder",
-    liveUrl: "https://recipe-finder-demo.netlify.app",
     featured: false,
   },
 ];
 
-// ProjectCard component for individual projects
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <motion.div
@@ -98,19 +82,32 @@ const ProjectCard = ({ project }: { project: Project }) => {
       transition={{ duration: 0.4 }}
       className="flex flex-col bg-card rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
     >
-      <div className="relative h-48 w-full">
-        <Image
-          src={project.image}
-          alt={project.title}
-          className="object-cover"
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
+      <div className="relative w-full aspect-video">
+        {project.video ? (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+            preload="auto"
+          >
+            <source src={project.video} type="video/mp4" />
+          </video>
+        ) : (
+          <Image
+            src={project.image || "/projects/default-project.jpg"}
+            alt={project.title}
+            className="object-cover"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        )}
       </div>
 
       <div className="flex-1 p-5">
         <div className="flex flex-wrap gap-2 mb-3">
-          {project.tags.slice(0, 3).map((tag) => (
+          {project.tags.slice(0, 4).map((tag) => (
             <span
               key={tag}
               className="px-2 py-1 text-xs rounded-full bg-muted font-medium"
@@ -118,9 +115,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
               {tag}
             </span>
           ))}
-          {project.tags.length > 3 && (
+          {project.tags.length > 4 && (
             <span className="px-2 py-1 text-xs rounded-full bg-muted font-medium">
-              +{project.tags.length - 3}
+              +{project.tags.length - 4}
             </span>
           )}
         </div>
@@ -131,26 +128,6 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </p>
 
         <div className="flex items-center gap-3 mt-auto">
-          {project.githubUrl && (
-            <Link
-              href={project.githubUrl}
-              target="_blank"
-              className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
-              aria-label={`GitHub repository for ${project.title}`}
-            >
-              <Github size={18} />
-            </Link>
-          )}
-          {project.liveUrl && (
-            <Link
-              href={project.liveUrl}
-              target="_blank"
-              className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors"
-              aria-label={`Live demo for ${project.title}`}
-            >
-              <ExternalLink size={18} />
-            </Link>
-          )}
           <Link
             href={`/projects/${project.id}`}
             className="ml-auto flex items-center gap-1 text-sm font-medium hover:underline"
