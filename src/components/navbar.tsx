@@ -118,7 +118,7 @@ export function Navbar() {
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="md:hidden overflow-hidden"
+              className="md:hidden overflow-hidden bg-background w-full border-b border-border/50 shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
             >
               <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
                 {navItems.map((item) => (
