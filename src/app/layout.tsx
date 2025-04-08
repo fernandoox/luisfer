@@ -27,12 +27,16 @@ export default function RootLayout({
     <html lang="en" className="notranslate" translate="no">
       <head>
         <meta name="google" content="notranslate" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <main className="pt-12">{children}</main>
+        <main className="pt-16 md:pt-20 mt-safe">{children}</main>
       </body>
     </html>
   );

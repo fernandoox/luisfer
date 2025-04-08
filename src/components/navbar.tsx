@@ -40,7 +40,7 @@ export function Navbar() {
         scrolled
           ? "bg-background/95 backdrop-blur-[1px] border-b border-border/50 shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
           : "bg-background"
-      } fixed top-0 left-0 right-0 z-50 transition-all duration-300`}
+      } fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-safe`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -73,7 +73,6 @@ export function Navbar() {
             </div>
           </div>
           <div className="md:hidden">
-            {/* Reemplazamos el componente Button por un div peronalizado */}
             <div
               className="p-2 rounded-md bg-accent cursor-pointer"
               onClick={() => setIsOpen(!isOpen)}
