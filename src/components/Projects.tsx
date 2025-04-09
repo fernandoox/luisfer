@@ -38,19 +38,19 @@ const projects: Project[] = [
   },
   {
     id: "project-3",
-    title: "Fitness Tracker",
+    title: "Líderes Coca-Cola",
     description:
-      "A mobile-responsive application for tracking workouts, nutrition, and progress with data visualization and personalized insights.",
-    image: "https://picsum.photos/804/504",
-    tags: ["React", "Node.js", "MongoDB", "Chart.js"],
+      "A loyalty rewards platform where store owners earn points based on Coca-Cola purchases, store performance, and monthly sales goals.",
+    image: "/projects/lideres.webp",
+    tags: ["Angular", "PrimeNG", "Chart.js"],
     featured: false,
   },
   {
     id: "project-4",
-    title: "Weather App",
+    title: "MaxiSend",
     description:
-      "A weather forecast application with location detection, extended forecasts, and interactive weather maps.",
-    image: "https://picsum.photos/803/503",
+      "A money transfer platform designed for Latin American families, enabling secure and fast remittances from the U.S. to 17 countries through a wide agent network.",
+    image: "/projects/maxi.webp",
     tags: ["JavaScript", "HTML5", "CSS3", "API Integration"],
     featured: false,
   },
@@ -59,7 +59,7 @@ const projects: Project[] = [
     title: "Blog Platform",
     description:
       "A full-featured blog platform with markdown support, comment system, and user authentication.",
-    image: "https://picsum.photos/802/502",
+    image: "https://picsum.photos/802/503",
     tags: ["Angular", "TypeScript", "Node.js", "PostgreSQL"],
     featured: true,
   },
