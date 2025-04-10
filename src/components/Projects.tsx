@@ -64,6 +64,15 @@ const projects: Project[] = [
     featured: false,
   },
   {
+    id: "project-8",
+    title: "Banorte SPEI Integration",
+    description:
+      "Developed a robust integration for Banorte using the SPEI system, enabling real-time, secure fund transfers through optimized APIs and banking protocols.",
+    image: "/projects/banorte.webp",
+    tags: ["Express", "Spring Boot", "Kafka"],
+    featured: false,
+  },
+  {
     id: "project-1",
     title: "Home Insurance Quotation Tool",
     description:
