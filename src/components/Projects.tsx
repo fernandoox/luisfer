@@ -19,22 +19,31 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: "project-1",
-    title: "Home Insurance Quotation Tool",
+    id: "project-6",
+    title: "Cornershop by UBER",
     description:
-      "A web app to quickly quote home insurance with coverage for damages, incidents, and assistance services.",
-    image: "/projects/gnp.webp",
-    tags: ["Angular", "TypeScript", "Angular Material", "Node.js"],
-    featured: true,
+      "A customer service platform built for Cornershop’s grocery delivery operations, enabling support teams to manage inquiries, track issues, and deliver fast, personalized assistance.",
+    image: "/projects/corner.png",
+    tags: ["React", "Zustand", "i18n", "Design System"],
+    featured: false,
   },
   {
     id: "project-2",
     title: "Kapital Flex",
     description:
       "A fintech solution offering flexible credit lines to finance supplier payments and improve cash flow management.",
-    video: "/projects/k-flex.mp4",
+    image: "/projects/kapital.webp",
     tags: ["React", "JavaScript", "Redux Toolkit", "MongoDB"],
     featured: true,
+  },
+  {
+    id: "project-7",
+    title: "Liverpool E-commerce",
+    description:
+      "Enhancements to Liverpool’s online retail experience, focusing on performance, SEO, and digital marketing strategies to boost visibility and drive organic growth.",
+    image: "/projects/liverpool.webp",
+    tags: ["Next", "SEO On-page", "Google Analytics", "GTM"],
+    featured: false,
   },
   {
     id: "project-3",
@@ -51,26 +60,26 @@ const projects: Project[] = [
     description:
       "A money transfer platform designed for Latin American families, enabling secure and fast remittances from the U.S. to 17 countries through a wide agent network.",
     image: "/projects/maxi.webp",
-    tags: ["JavaScript", "HTML5", "CSS3", "API Integration"],
+    tags: ["Angular", "Redux", "GraphQL", "WebSockets"],
     featured: false,
   },
   {
-    id: "project-5",
-    title: "Blog Platform",
+    id: "project-1",
+    title: "Home Insurance Quotation Tool",
     description:
-      "A full-featured blog platform with markdown support, comment system, and user authentication.",
-    image: "https://picsum.photos/802/503",
-    tags: ["Angular", "TypeScript", "Node.js", "PostgreSQL"],
+      "A web app to quickly quote home insurance with coverage for damages, incidents, and assistance services.",
+    image: "/projects/gnp.webp",
+    tags: ["Angular", "TypeScript", "Angular Material", "Express"],
     featured: true,
   },
   {
-    id: "project-6",
-    title: "Recipe Finder",
+    id: "project-5",
+    title: "OrkestaDoc (Tax Materiality)",
     description:
-      "A recipe search application with filtering by ingredients, dietary restrictions, and meal type.",
-    image: "https://picsum.photos/801/501",
-    tags: ["React", "Redux", "CSS3", "API Integration"],
-    featured: false,
+      "A blockchain-powered compliance platform that streamlines legal processes, workplace safety, intercompany financial operations, and tax materiality through secure and transparent solutions.",
+    image: "/projects/orkesta.webp",
+    tags: ["React", "Blockchain", "Express", "MongoDB"],
+    featured: true,
   },
 ];
 
@@ -141,11 +150,9 @@ const ProjectCard = ({ project }: { project: Project }) => {
   );
 };
 
-// Main Projects component
 const Projects: React.FC = () => {
   const [filter, setFilter] = useState<"all" | "featured">("all");
 
-  // Filter projects based on current filter
   const filteredProjects =
     filter === "all"
       ? projects
