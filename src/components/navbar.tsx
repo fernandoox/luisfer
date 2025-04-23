@@ -66,15 +66,17 @@ export function Navbar() {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {navItems
+                  .filter((item) => !["About", "Resume"].includes(item.name))
+                  .map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="rounded-md px-3 py-2 text-sm font-medium text-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
               </div>
             </div>
             <div className="md:hidden">
@@ -121,16 +123,18 @@ export function Navbar() {
               className="md:hidden overflow-hidden bg-background w-full border-b border-border/50 shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
             >
               <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
+                {navItems
+                  .filter((item) => !["About", "Resume"].includes(item.name))
+                  .map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="block rounded-md px-3 py-2 text-base font-medium text-foreground hover:bg-accent hover:text-accent-foreground"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
               </div>
             </motion.div>
           )}

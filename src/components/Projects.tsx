@@ -25,7 +25,7 @@ const projects: Project[] = [
       "A customer service platform built for Cornershop’s grocery delivery operations, enabling support teams to manage inquiries, track issues, and deliver fast, personalized assistance.",
     image: "/projects/corner.png",
     tags: ["React", "Zustand", "i18n", "Design System"],
-    featured: false,
+    featured: true,
   },
   {
     id: "project-2",
@@ -43,7 +43,7 @@ const projects: Project[] = [
       "Enhancements to Liverpool’s online retail experience, focusing on performance, SEO, and digital marketing strategies to boost visibility and drive organic growth.",
     image: "/projects/liverpool.webp",
     tags: ["Next", "SEO On-page", "Google Analytics", "GTM"],
-    featured: false,
+    featured: true,
   },
   {
     id: "project-3",
@@ -52,7 +52,7 @@ const projects: Project[] = [
       "A loyalty rewards platform where store owners earn points based on Coca-Cola purchases, store performance, and monthly sales goals.",
     image: "/projects/lideres.webp",
     tags: ["Angular", "PrimeNG", "Chart.js"],
-    featured: false,
+    featured: true,
   },
   {
     id: "project-4",
@@ -61,7 +61,7 @@ const projects: Project[] = [
       "A money transfer platform designed for Latin American families, enabling secure and fast remittances from the U.S. to 17 countries through a wide agent network.",
     image: "/projects/maxi.webp",
     tags: ["Angular", "Redux", "GraphQL", "WebSockets"],
-    featured: false,
+    featured: true,
   },
   {
     id: "project-8",
@@ -70,7 +70,7 @@ const projects: Project[] = [
       "Developed a robust integration for Banorte using the SPEI system, enabling real-time, secure fund transfers through optimized APIs and banking protocols.",
     image: "/projects/banorte.webp",
     tags: ["Express", "Spring Boot", "Kafka"],
-    featured: false,
+    featured: true,
   },
   {
     id: "project-1",
@@ -190,7 +190,7 @@ const Projects: React.FC = () => {
           >
             All Projects
           </button>
-          <button
+          {/*  <button
             onClick={() => setFilter("featured")}
             className={cn(
               "px-4 py-2 rounded-full text-sm font-medium transition-colors",
@@ -200,7 +200,7 @@ const Projects: React.FC = () => {
             )}
           >
             Featured
-          </button>
+          </button> */}
         </div>
       </div>
 
