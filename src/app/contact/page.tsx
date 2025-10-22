@@ -18,7 +18,8 @@ const ContactPage: React.FC = () => {
             Let&apos;s Connect 👋
           </h1>
           <p className="text-muted-foreground text-lg">
-            Find me on social media and let&apos;s build something amazing together
+            Find me on social media and let&apos;s build something amazing
+            together
           </p>
         </div>
       </AnimatedDiv>
@@ -28,7 +29,6 @@ const ContactPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="h-full"
         >
           <a
             href="https://www.linkedin.com/in/luis-fernando-fern%C3%A1ndez-cruz-056054168/"
@@ -52,7 +52,6 @@ const ContactPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="h-full"
         >
           <a
             href="https://github.com/fernandoox/"
@@ -76,7 +75,6 @@ const ContactPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="h-full"
         >
           <a
             href="https://instagram.com/_fernando_ox"
