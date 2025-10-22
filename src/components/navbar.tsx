@@ -11,6 +11,7 @@ const navItems = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Resume", href: "/resume" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -52,7 +53,7 @@ export function Navbar() {
             <div className="flex items-center gap-2">
               <Avatar className="h-10 w-10 border border-border">
                 <AvatarImage
-                  src="/avatar-placeholder.png"
+                  src="https://ca.slack-edge.com/T01QG95TU01-U0755J5TXMW-0baf09ce4268-512"
                   alt="Luis F Fernandez"
                 />
                 <AvatarFallback>LF</AvatarFallback>
