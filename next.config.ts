@@ -8,7 +8,20 @@ const withMDX = createMDX({
 const nextConfig: NextConfig = withMDX({
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   images: {
-    domains: ["picsum.photos", "images.unsplash.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+      },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "ca.slack-edge.com",
+      },
+    ],
   },
 });
 
