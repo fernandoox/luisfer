@@ -7,7 +7,7 @@ import { Github, Linkedin, Instagram } from "lucide-react";
 
 const ContactPage: React.FC = () => {
   return (
-    <div className="w-full md:w-5/6 mx-auto p-6">
+    <div className="w-full md:w-5/6 mx-auto p-6 min-h-[calc(100dvh-4rem)] flex flex-col justify-center">
       <AnimatedDiv
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
